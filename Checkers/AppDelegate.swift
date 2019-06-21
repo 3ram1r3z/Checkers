@@ -16,6 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        guard let window = window else { return false }
+        window.backgroundColor = .white
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.minimumLineSpacing = 0
+        
+        
+        let controller = ViewController(collectionViewLayout: flowLayout)
+
+        window.rootViewController = controller
+        window.makeKeyAndVisible()
         return true
     }
 
